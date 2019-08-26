@@ -1,0 +1,3 @@
+CREATE USER IF NOT EXISTS 'jirauser'@'%' IDENTIFIED BY 'jirapw';
+CREATE USER IF NOT EXISTS 'confuser'@'%' IDENTIFIED BY 'confpw';
+
