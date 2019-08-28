@@ -46,6 +46,7 @@ RUN groupadd -r mysql && useradd -r -g mysql mysql \
 
 VOLUME /var/lib/mysql
 
+COPY my.cnf /etc/mysql/conf.d/my.cnf
 COPY docker-entrypoint.sh /entrypoint.sh
 COPY healthcheck.sh /healthcheck.sh
 COPY init_sql/* /docker-entrypoint-initdb.d/
