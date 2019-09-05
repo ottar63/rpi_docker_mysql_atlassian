@@ -27,6 +27,9 @@ RUN groupadd -r mysql && useradd -r -g mysql mysql \
   \
   && echo "***** Config mysql..." \
   && rm -rf /var/lib/mysql && mkdir -p /var/lib/mysql /var/run/mysqld \
+  # Change timezone
+  && rm /etc/localtime \
+  && ln -s /usr/share/zoneinfo/Europe/Oslo /etc/localtime \
   && touch /var/log/mysqld.log \
   && chown -R mysql:mysql /var/lib/mysql /var/run/mysqld /var/log/mysqld.log \
   # Ensure that /var/run/mysqld (used for socket and lock files) is writable regardless of the UID our mysqld instance ends up having at runtime
