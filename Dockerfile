@@ -55,5 +55,5 @@ COPY healthcheck.sh /healthcheck.sh
 COPY init_sql/* /docker-entrypoint-initdb.d/
 ENTRYPOINT ["/entrypoint.sh"]
 HEALTHCHECK CMD /healthcheck.sh
-EXPOSE 3306 3306
+EXPOSE 3306
 CMD ["mysqld"]
